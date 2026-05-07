@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
-              <img src={logo} alt="Bienestar Interior" className="h-10 w-auto brightness-0 invert" />
+              <img src={logo} alt="Bienestar Interior" className="h-20 w-auto brightness-0 invert" />
             </Link>
             <p className="text-stone-400 text-sm leading-relaxed">
               Acompañamiento terapéutico integral para el equilibrio emocional y el crecimiento personal. Mercedes Iglesias, Terapeuta Transpersonal.
