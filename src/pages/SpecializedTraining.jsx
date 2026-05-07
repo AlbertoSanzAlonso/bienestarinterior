@@ -5,7 +5,7 @@ import therapyImg from '../assets/therapy-room.png';
 
 const SpecializedTraining = () => {
   return (
-    <div className="pt-24 pb-24">
+    <div className="pt-32 pb-24">
       {/* Hero Section - Inspired by the Poster */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden mb-24">
         <div className="absolute inset-0 z-0">

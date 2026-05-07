@@ -44,28 +44,6 @@ const Hero = () => {
               </button>
             </div>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="mt-16 flex items-center gap-8 text-stone-500"
-          >
-            <div className="flex flex-col">
-              <span className="text-2xl font-display font-bold text-stone-800">15+</span>
-              <span className="text-xs uppercase tracking-widest font-semibold">Años de Exp.</span>
-            </div>
-            <div className="w-px h-10 bg-stone-300"></div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-display font-bold text-stone-800">500+</span>
-              <span className="text-xs uppercase tracking-widest font-semibold">Vidas Transformadas</span>
-            </div>
-            <div className="w-px h-10 bg-stone-300"></div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-display font-bold text-stone-800">100%</span>
-              <span className="text-xs uppercase tracking-widest font-semibold">Compromiso</span>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
