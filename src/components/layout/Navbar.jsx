@@ -36,10 +36,10 @@ const Navbar = () => {
     <nav
       className={cn(
         'fixed w-full z-50 transition-all duration-300 px-4',
-        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent'
+        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
       )}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center bg-white/40 backdrop-blur-sm rounded-full px-6 py-2 border border-white/20">
+      <div className="max-w-7xl mx-auto flex justify-between items-center bg-transparent backdrop-blur-sm rounded-full px-6 py-2 border border-white/20">
         <Link to="/" className="flex items-center gap-3 group">
           <img src={logo} alt="Bienestar Interior" className="h-25 w-auto group-hover:scale-105 transition-transform" />
         </Link>
