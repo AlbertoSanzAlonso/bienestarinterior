@@ -4,14 +4,14 @@ import mercedesPhoto from '../assets/mercedes.webp';
 
 const About = () => {
   return (
-    <div className="pt-48 pb-24">
+    <div className="pt-32 sm:pt-48 pb-24">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="sticky top-32"
+            className="lg:sticky lg:top-32 mb-12 lg:mb-0"
           >
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
               <img 
@@ -21,7 +21,7 @@ const About = () => {
               />
               <div className="absolute inset-0 bg-brand-primary/10 mix-blend-multiply"></div>
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white p-8 rounded-2xl shadow-xl border border-stone-100 max-w-xs">
+            <div className="relative lg:absolute lg:-bottom-6 lg:-left-6 bg-white p-8 rounded-2xl shadow-xl border border-stone-100 max-w-xs mt-6 lg:mt-0">
               <p className="italic text-stone-600 font-serif leading-relaxed">
                 "Mi misión es ayudarte a encontrar la paz que ya reside en ti, despejando los obstáculos que el ego y la mente han construido."
               </p>

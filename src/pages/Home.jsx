@@ -28,8 +28,9 @@ const Home = () => {
                 <img 
                   src={mercedesPhoto} 
                   alt="Mercedes Iglesias" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
                 />
+                <div className="absolute inset-0 bg-stone-100/20 backdrop-blur-[0.5px]"></div>
               </div>
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl -z-0"></div>
               <div className="absolute -top-10 -left-10 w-48 h-48 bg-amber-200/20 rounded-full blur-2xl -z-0"></div>

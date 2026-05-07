@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import logo from '../../assets/logo-improved.webp';
@@ -13,24 +13,19 @@ function cn(...inputs) {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const location = useLocation();
+  const { scrollY } = useScroll();
 
-  const navLinks = [
-    { name: 'Inicio', path: '/' },
-    { name: 'Un poco de mí', path: '/sobre-mi' },
-    { name: 'Terapeuta y Mentoría', path: '/servicios' },
-    { name: 'Terapias y Cursos', path: '/cursos' },
-    { name: 'Valor Consultas', path: '/tarifas' },
-    { name: 'Formación Especializada', path: '/formacion' },
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+    setIsScrolled(latest > 20);
+  });
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -41,6 +36,7 @@ const Navbar = () => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setIsHidden(false); // Ensure navbar is visible when menu is open
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -48,7 +44,15 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed w-full z-50 transition-all duration-300 px-2 sm:px-4 py-4 sm:py-6">
+      <motion.nav 
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: -100 },
+        }}
+        animate={isHidden && !isOpen ? "hidden" : "visible"}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="fixed w-full z-50 px-2 sm:px-4 py-4 sm:py-6"
+      >
         <div 
           className={cn(
             "max-w-7xl mx-auto flex justify-between items-center rounded-full px-4 md:px-6 py-1.5 md:py-3 border transition-all duration-500",
@@ -70,7 +74,15 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-4 xl:gap-8">
-            {navLinks.map((link) => (
+            {/* ... (rest of the links) */}
+            {[
+              { name: 'Inicio', path: '/' },
+              { name: 'Un poco de mí', path: '/sobre-mi' },
+              { name: 'Terapia Transpersonal y Mentoría', path: '/servicios' },
+              { name: 'Terapias y Cursos', path: '/cursos' },
+              { name: 'Valor Consultas', path: '/tarifas' },
+              { name: 'Formación Especializada', path: '/formacion' },
+            ].map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -118,7 +130,7 @@ const Navbar = () => {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
@@ -139,7 +151,14 @@ const Navbar = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col gap-2 overflow-y-auto">
-                {navLinks.map((link, i) => (
+                {[
+                  { name: 'Inicio', path: '/' },
+                  { name: 'Un poco de mí', path: '/sobre-mi' },
+                  { name: 'Terapia Transpersonal y Mentoría', path: '/servicios' },
+                  { name: 'Terapias y Cursos', path: '/cursos' },
+                  { name: 'Valor Consultas', path: '/tarifas' },
+                  { name: 'Formación Especializada', path: '/formacion' },
+                ].map((link, i) => (
                   <motion.div
                     key={link.path}
                     initial={{ opacity: 0, x: 20 }}
