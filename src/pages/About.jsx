@@ -36,10 +36,13 @@ const About = () => {
           >
             <span className="text-brand-primary font-bold tracking-widest uppercase text-sm mb-4 block">Sobre mí</span>
             <h1 className="text-5xl font-display font-bold text-stone-900 mb-8 leading-tight">
-              Acompañando procesos de <br /> <span className="text-brand-primary">sanación y consciencia</span>
+              Este camino me eligió, <br /> <span className="text-brand-primary">no lo elegí yo</span>
             </h1>
             
             <div className="prose prose-stone prose-lg max-w-none text-stone-600 space-y-6">
+              <p className="text-xl font-medium italic text-brand-accent">
+                "En todo este proceso me he formado en la mayor de las escuelas, la vida."
+              </p>
               <p>
                 Soy Mercedes Iglesias, Terapeuta Transpersonal y Mentora. Mi camino en el mundo del bienestar comenzó hace más de 15 años, movida por una búsqueda personal de sentido y equilibrio.
               </p>

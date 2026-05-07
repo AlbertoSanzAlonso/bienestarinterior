@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import logo from '../../assets/logo-improved.png';
+import logo from '../../assets/logo-improved.webp';
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
