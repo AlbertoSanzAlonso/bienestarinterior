@@ -4,7 +4,7 @@ import mercedesPhoto from '../assets/mercedes.webp';
 
 const About = () => {
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-48 pb-24">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           <motion.div

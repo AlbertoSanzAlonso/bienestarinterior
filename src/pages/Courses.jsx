@@ -27,7 +27,7 @@ const courses = [
 
 const Courses = () => {
   return (
-    <div className="pt-32 pb-24">
+    <div className="pt-48 pb-24">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-20">
           <motion.div

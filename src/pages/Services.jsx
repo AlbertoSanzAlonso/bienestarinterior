@@ -38,7 +38,7 @@ const serviceList = [
 
 const Services = () => {
   return (
-    <div className="pt-32 pb-24 bg-brand-bg">
+    <div className="pt-48 pb-24 bg-brand-bg">
       <div className="section-container">
         <div className="max-w-3xl mx-auto text-center mb-20">
           <motion.div
