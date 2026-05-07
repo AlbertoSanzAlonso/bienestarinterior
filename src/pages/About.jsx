@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Award, BookOpen, Heart, ShieldCheck } from 'lucide-react';
+import mercedesPhoto from '../assets/mercedes.webp';
 
 const About = () => {
   return (
@@ -14,7 +15,7 @@ const About = () => {
           >
             <div className="relative aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
+                src={mercedesPhoto} 
                 alt="Mercedes Iglesias" 
                 className="w-full h-full object-cover"
               />

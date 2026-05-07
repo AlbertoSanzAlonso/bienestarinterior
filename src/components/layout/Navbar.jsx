@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import logo from '../../assets/logo-improved.png';
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -39,13 +40,8 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center bg-white/40 backdrop-blur-sm rounded-full px-6 py-2 border border-white/20">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="bg-brand-primary p-1.5 rounded-full group-hover:scale-110 transition-transform">
-            <Heart className="w-5 h-5 text-white" fill="white" />
-          </div>
-          <span className="text-xl font-display font-bold text-brand-primary tracking-tight">
-            Bienestar Interior
-          </span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <img src={logo} alt="Bienestar Interior" className="h-10 w-auto group-hover:scale-105 transition-transform" />
         </Link>
 
         {/* Desktop Menu */}

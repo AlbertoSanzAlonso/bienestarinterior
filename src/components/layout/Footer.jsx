@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, Facebook, Heart } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react';
+import logo from '../../assets/logo-improved.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,13 +10,8 @@ const Footer = () => {
       <div className="section-container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 mb-6 group">
-              <div className="bg-brand-primary p-1.5 rounded-full">
-                <Heart className="w-5 h-5 text-white" fill="white" />
-              </div>
-              <span className="text-xl font-display font-bold text-white tracking-tight">
-                Bienestar Interior
-              </span>
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
+              <img src={logo} alt="Bienestar Interior" className="h-10 w-auto brightness-0 invert" />
             </Link>
             <p className="text-stone-400 text-sm leading-relaxed">
               Acompañamiento terapéutico integral para el equilibrio emocional y el crecimiento personal. Mercedes Iglesias, Terapeuta Transpersonal.

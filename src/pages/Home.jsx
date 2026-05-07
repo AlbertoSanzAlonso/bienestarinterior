@@ -1,6 +1,7 @@
 import Hero from '../components/sections/Hero';
 import ServicesSummary from '../components/sections/ServicesSummary';
 import { motion } from 'framer-motion';
+import heroPhoto from '../assets/hero-bg.webp';
 
 const Home = () => {
   return (
@@ -18,8 +19,8 @@ const Home = () => {
             >
               <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative z-10">
                 <img 
-                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" 
-                  alt="Terapia Bienestar" 
+                  src={heroPhoto} 
+                  alt="Bienestar Interior" 
                   className="w-full h-full object-cover"
                 />
               </div>
