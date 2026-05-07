@@ -1,5 +1,65 @@
 import { motion } from 'framer-motion';
-import { Check, Info } from 'lucide-react';
+import { Check, Info, Sparkles, Heart, Zap, Quote } from 'lucide-react';
+
+const pricingPlans = [
+  {
+    title: 'Sesión Terapéutica',
+    subtitle: 'Hipnosis',
+    price: '80€',
+    duration: '1,5h',
+    features: ['Evaluación inicial', 'Sesión profunda', 'Herramientas personalizadas'],
+    icon: Sparkles,
+    highlight: false
+  },
+  {
+    title: 'Sesiones Terapéuticas',
+    subtitle: 'Hipnosis (Bono)',
+    price: '300€',
+    duration: 'x5 clases',
+    features: ['Proceso continuado', 'Acompañamiento estrecho', 'Ahorro de 100€'],
+    icon: Zap,
+    highlight: true
+  },
+  {
+    title: 'Terapia Energética',
+    subtitle: 'Meditación - Reiki - Chakras',
+    price: '35€',
+    duration: '45min',
+    features: ['Equilibrio de chakras', 'Relajación profunda', 'Armonización'],
+    icon: Heart,
+    highlight: false
+  },
+  {
+    title: 'Hipnosis Adelgazar',
+    subtitle: 'Plan Transformación',
+    price: '300€',
+    duration: 'x3 sesiones',
+    quote: '«El cambio transforma cuerpo y vida»',
+    features: ['Reprogramación metabólica', 'Hábitos conscientes', 'Soporte motivacional'],
+    icon: Sparkles,
+    highlight: false
+  },
+  {
+    title: 'Hipnosis Dejar de Fumar',
+    subtitle: 'Plan Liberación',
+    price: '300€',
+    duration: 'x5 clases',
+    quote: '«Libérate del humo»',
+    features: ['Desactivación de ansias', 'Fortaleza mental', 'Acompañamiento post-proceso'],
+    icon: Sparkles,
+    highlight: false
+  },
+  {
+    title: 'Terapia de Pareja',
+    subtitle: 'Conexión y Diálogo',
+    price: '100€',
+    duration: 'Sesión',
+    quote: '«Si dos quieren TODO se puede»',
+    features: ['Escucha activa bidireccional', 'Resolución de conflictos', 'Fortalecimiento del vínculo'],
+    icon: Heart,
+    highlight: false
+  }
+];
 
 const Pricing = () => {
   return (
@@ -12,97 +72,92 @@ const Pricing = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl font-display font-bold text-stone-900 mb-6">Valor de Consultas</h1>
-            <p className="text-xl text-stone-600">
-              Información transparente sobre los servicios y la metodología de trabajo. La inversión en ti mismo es la que mejores beneficios reporta.
+            <p className="text-xl text-stone-600 italic">
+              "La inversión en tu bienestar es el único activo que siempre crece."
             </p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-10 rounded-3xl border border-stone-100 shadow-sm flex flex-col">
-            <h3 className="text-xl font-display font-bold text-stone-900 mb-4">Sesión Individual</h3>
-            <div className="text-4xl font-display font-bold text-brand-primary mb-6">60€<span className="text-sm text-stone-400 font-normal"> / sesión</span></div>
-            <p className="text-stone-500 text-sm mb-8">Ideal para consultas puntuales o para iniciar un proceso de autoconocimiento.</p>
-            <ul className="space-y-4 mb-10 flex-grow">
-              <li className="flex items-center gap-3 text-sm text-stone-700">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Duración: 60-75 min
-              </li>
-              <li className="flex items-center gap-3 text-sm text-stone-700">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Presencial u Online
-              </li>
-              <li className="flex items-center gap-3 text-sm text-stone-700">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Seguimiento por WhatsApp
-              </li>
-            </ul>
-            <button className="w-full py-4 rounded-xl border-2 border-stone-900 font-bold hover:bg-stone-900 hover:text-white transition-all">
-              Reservar
-            </button>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {pricingPlans.map((plan, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`p-10 rounded-[3rem] border flex flex-col transition-all hover:shadow-2xl relative ${
+                plan.highlight 
+                  ? 'bg-stone-900 text-white border-stone-800 shadow-xl' 
+                  : 'bg-white text-stone-900 border-stone-100'
+              }`}
+            >
+              {plan.highlight && (
+                <div className="absolute top-0 right-10 bg-brand-primary text-white px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-b-xl">
+                  Más Popular
+                </div>
+              )}
+              
+              <div className="flex items-center gap-4 mb-6">
+                <div className={`p-3 rounded-2xl ${plan.highlight ? 'bg-white/10' : 'bg-brand-primary/5'}`}>
+                  <plan.icon className="w-6 h-6 text-brand-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-display font-bold">{plan.title}</h3>
+                  <p className={`text-sm ${plan.highlight ? 'text-stone-400' : 'text-stone-500'}`}>{plan.subtitle}</p>
+                </div>
+              </div>
 
-          <div className="bg-stone-900 p-10 rounded-3xl shadow-2xl shadow-brand-primary/20 flex flex-col relative overflow-hidden transform md:-translate-y-4">
-            <div className="absolute top-0 right-0 bg-brand-primary text-white px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-bl-xl">
-              Recomendado
-            </div>
-            <h3 className="text-xl font-display font-bold text-white mb-4">Bono 5 Sesiones</h3>
-            <div className="text-4xl font-display font-bold text-brand-primary mb-6">250€<span className="text-sm text-stone-500 font-normal"> / pack</span></div>
-            <p className="text-stone-400 text-sm mb-8">La mejor opción para procesos de terapia profunda o bioneurodescodificación.</p>
-            <ul className="space-y-4 mb-10 flex-grow">
-              <li className="flex items-center gap-3 text-sm text-stone-300">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Ahorras 50€ (10€/sesión)
-              </li>
-              <li className="flex items-center gap-3 text-sm text-stone-300">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Prioridad en agenda
-              </li>
-              <li className="flex items-center gap-3 text-sm text-stone-300">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Material complementario
-              </li>
-              <li className="flex items-center gap-3 text-sm text-stone-300">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Válido por 6 meses
-              </li>
-            </ul>
-            <button className="w-full py-4 rounded-xl bg-brand-primary text-white font-bold hover:bg-brand-accent transition-all shadow-lg shadow-brand-primary/20">
-              Comprar Bono
-            </button>
-          </div>
+              <div className="mb-8">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-display font-bold text-brand-primary">{plan.price}</span>
+                  <span className={`text-sm ${plan.highlight ? 'text-stone-500' : 'text-stone-400'}`}> / {plan.duration}</span>
+                </div>
+              </div>
 
-          <div className="bg-white p-10 rounded-3xl border border-stone-100 shadow-sm flex flex-col">
-            <h3 className="text-xl font-display font-bold text-stone-900 mb-4">Mentoría Premium</h3>
-            <div className="text-4xl font-display font-bold text-brand-primary mb-6">120€<span className="text-sm text-stone-400 font-normal"> / sesión</span></div>
-            <p className="text-stone-500 text-sm mb-8">Acompañamiento intensivo de alto impacto para cambios transformacionales rápidos.</p>
-            <ul className="space-y-4 mb-10 flex-grow">
-              <li className="flex items-center gap-3 text-sm text-stone-700">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Duración: 2 horas
-              </li>
-              <li className="flex items-center gap-3 text-sm text-stone-700">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Enfoque estratégico
-              </li>
-              <li className="flex items-center gap-3 text-sm text-stone-700">
-                <Check className="w-4 h-4 text-brand-primary" />
-                Soporte VIP 24/7
-              </li>
-            </ul>
-            <button className="w-full py-4 rounded-xl border-2 border-stone-900 font-bold hover:bg-stone-900 hover:text-white transition-all">
-              Consultar
-            </button>
-          </div>
+              {plan.quote && (
+                <div className={`mb-8 p-4 rounded-2xl italic flex gap-3 ${plan.highlight ? 'bg-white/5 text-stone-300' : 'bg-stone-50 text-stone-600'}`}>
+                  <Quote className="w-5 h-5 shrink-0 opacity-40" />
+                  <p className="text-sm">{plan.quote}</p>
+                </div>
+              )}
+
+              <ul className="space-y-4 mb-10 flex-grow">
+                {plan.features.map((feature, fIndex) => (
+                  <li key={fIndex} className="flex items-center gap-3 text-sm opacity-90">
+                    <Check className="w-4 h-4 text-brand-primary shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <button className={`w-full py-4 rounded-2xl font-bold transition-all active:scale-95 ${
+                plan.highlight 
+                  ? 'bg-brand-primary text-white hover:bg-brand-accent shadow-lg shadow-brand-primary/20' 
+                  : 'bg-stone-900 text-white hover:bg-stone-800 shadow-lg shadow-stone-900/10'
+              }`}>
+                Reservar Cita
+              </button>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="mt-20 max-w-2xl mx-auto bg-white p-8 rounded-2xl border border-stone-100 flex gap-6 items-start">
-          <Info className="w-8 h-8 text-brand-primary shrink-0" />
-          <div className="text-sm text-stone-500 leading-relaxed">
-            <p className="font-bold text-stone-700 mb-2">Nota importante:</p>
-            <p>
-              Las citas se reservan con al menos 48 horas de antelación. En caso de cancelación, se ruega avisar con un mínimo de 24 horas para poder reasignar el hueco a otra persona. Las sesiones pueden realizarse tanto presencialmente en Dos Hermanas (Sevilla) como de forma telemática a través de Zoom o WhatsApp Video.
-            </p>
+        <div className="mt-20 max-w-3xl mx-auto bg-white p-10 rounded-[2.5rem] border border-stone-100 flex flex-col md:flex-row gap-8 items-center md:items-start shadow-xl shadow-stone-200/50">
+          <div className="p-4 bg-brand-primary/10 rounded-2xl shrink-0">
+            <Info className="w-8 h-8 text-brand-primary" />
+          </div>
+          <div className="text-stone-600 leading-relaxed text-center md:text-left">
+            <h4 className="font-display font-bold text-stone-900 text-xl mb-4">Información Adicional</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+              <div>
+                <p className="font-bold text-stone-800 mb-2">Cancelaciones</p>
+                <p>Rogamos avisar con un mínimo de 24 horas de antelación para poder reasignar la sesión.</p>
+              </div>
+              <div>
+                <p className="font-bold text-stone-800 mb-2">Modalidad</p>
+                <p>Las sesiones pueden realizarse presencialmente en Dos Hermanas (Sevilla) o vía Online (Zoom/WhatsApp).</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

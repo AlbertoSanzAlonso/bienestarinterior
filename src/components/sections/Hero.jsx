@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import heroBg from '../../assets/hero-bg.webp';
+import heroBg from '../../assets/home-hero.jpg';
 
 const Hero = () => {
   return (
@@ -10,10 +10,10 @@ const Hero = () => {
         <img
           src={heroBg}
           alt="Bienestar Interior Background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover scale-105 animate-slow-zoom"
         />
-        <div className="absolute inset-0 bg-stone-100/40 backdrop-blur-[2px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-100/90 via-stone-100/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-stone-100/30 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-stone-100/80 via-stone-100/40 to-transparent"></div>
       </div>
 
       <div className="section-container relative z-10 w-full">
