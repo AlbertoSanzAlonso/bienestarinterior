@@ -34,7 +34,7 @@ const About = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="text-brand-primary font-bold tracking-widest uppercase text-sm mb-4 block">Sobre mí</span>
+            <span className="text-brand-primary font-bold tracking-widest uppercase text-sm mb-4 block">Sobre los orígenes</span>
             <h1 className="text-5xl font-display font-bold text-stone-900 mb-8 leading-tight">
               Este camino me eligió, <br /> <span className="text-brand-primary">no lo elegí yo</span>
             </h1>

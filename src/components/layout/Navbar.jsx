@@ -4,7 +4,7 @@ import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
-import logo from '../../assets/logo-improved.webp';
+import logo from '../../assets/logo-web-coach.png';
 
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -65,10 +65,7 @@ const Navbar = () => {
             <img 
               src={logo} 
               alt="Bienestar Interior" 
-              className={cn(
-                "h-8 sm:h-12 md:h-20 w-auto transition-all duration-500",
-                (isScrolled || isOpen) ? "brightness-0 invert" : ""
-              )} 
+              className="h-9 sm:h-11 md:h-14 w-auto transition-all duration-500"
             />
           </Link>
 
@@ -77,11 +74,11 @@ const Navbar = () => {
             {/* ... (rest of the links) */}
             {[
               { name: 'Inicio', path: '/' },
-              { name: 'Un poco de mí', path: '/sobre-mi' },
+              { name: 'Formación Especializada', path: '/formacion' },
               { name: 'Terapia Transpersonal y Mentoría', path: '/servicios' },
               { name: 'Terapias y Cursos', path: '/cursos' },
+              { name: 'Un poco de mí', path: '/sobre-mi' },
               { name: 'Valor Consultas', path: '/tarifas' },
-              { name: 'Formación Especializada', path: '/formacion' },
             ].map((link) => (
               <Link
                 key={link.path}
@@ -153,11 +150,11 @@ const Navbar = () => {
               <div className="flex flex-col gap-2 overflow-y-auto">
                 {[
                   { name: 'Inicio', path: '/' },
-                  { name: 'Un poco de mí', path: '/sobre-mi' },
+                  { name: 'Formación Especializada', path: '/formacion' },
                   { name: 'Terapia Transpersonal y Mentoría', path: '/servicios' },
                   { name: 'Terapias y Cursos', path: '/cursos' },
+                  { name: 'Un poco de mí', path: '/sobre-mi' },
                   { name: 'Valor Consultas', path: '/tarifas' },
-                  { name: 'Formación Especializada', path: '/formacion' },
                 ].map((link, i) => (
                   <motion.div
                     key={link.path}

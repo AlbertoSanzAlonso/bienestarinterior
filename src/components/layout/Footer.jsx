@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
-import logo from '../../assets/logo-improved.webp';
+import logo from '../../assets/logo-web-coach.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
-              <img src={logo} alt="Bienestar Interior" className="h-20 w-auto brightness-0 invert" />
+              <img src={logo} alt="Bienestar Interior" className="h-16 w-auto max-w-full" />
             </Link>
             <p className="text-white/90 text-sm leading-relaxed max-w-sm">
               Acompañamiento terapéutico integral para el equilibrio emocional y el crecimiento personal. Mercedes Iglesias, Terapeuta Transpersonal.
@@ -67,16 +67,34 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h4 className="text-white font-display font-bold mb-6 uppercase tracking-widest text-xs">Contacto</h4>
             <ul className="space-y-4 text-sm font-medium flex flex-col items-center md:items-start">
-              <li className="flex items-start gap-3 text-white/90">
-                <Phone className="w-5 h-5 text-white/70 shrink-0" />
-                <span>646 16 44 31</span>
+              <li>
+                <a
+                  href="tel:+34646164431"
+                  className="flex items-start gap-3 text-white/90 hover:text-white transition-colors"
+                >
+                  <Phone className="w-5 h-5 text-white/70 shrink-0" />
+                  <span>646 16 44 31</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:mercedesiglesias@bienestarinterior.org"
+                  className="flex items-start gap-3 text-white/90 hover:text-white transition-colors"
+                >
+                  <Mail className="w-5 h-5 text-white/70 shrink-0" />
+                  <span className="break-all">mercedesiglesias@bienestarinterior.org</span>
+                </a>
               </li>
               <li className="flex items-start gap-3 text-white/90">
-                <Mail className="w-5 h-5 text-white/70 shrink-0" />
-                <span className="break-all">mercedesiglesias@bienestarinterior.org</span>
-              </li>
-              <li className="flex items-start gap-3 text-white/90">
-                <MapPin className="w-5 h-5 text-white/70 shrink-0" />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Dos+Hermanas,+Sevilla"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 hover:text-white transition-colors"
+                  aria-label="Abrir ubicación en Google Maps"
+                >
+                  <MapPin className="w-5 h-5 text-white/70" />
+                </a>
                 <span>Dos Hermanas, Sevilla</span>
               </li>
             </ul>

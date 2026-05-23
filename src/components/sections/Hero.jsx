@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import heroBg from '../../assets/home-hero.png';
+import logoWatermark from '../../assets/logo-web-coach-v.png';
 
 const Hero = () => {
   return (
@@ -16,6 +17,13 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-stone-100/80 via-stone-100/40 to-transparent"></div>
       </div>
 
+      <img
+        src={logoWatermark}
+        alt=""
+        aria-hidden="true"
+        className="absolute right-4 bottom-8 sm:right-8 sm:bottom-12 md:right-12 md:bottom-16 z-[1] w-24 sm:w-28 md:w-32 h-auto grayscale contrast-[1.08] opacity-[0.32] md:opacity-[0.42] pointer-events-none select-none mix-blend-multiply"
+      />
+
       <div className="section-container relative z-10 w-full">
         <div className="max-w-2xl">
           <motion.div
@@ -24,7 +32,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-4 py-1.5 bg-brand-primary/10 text-brand-primary rounded-full text-sm font-bold mb-6 tracking-wider uppercase">
-              Mercedes Iglesias • Terapeuta Transpersonal
+              Mercedes Iglesias • Formadora, mentora y terapeuta transpersonal
             </span>
             <h1 className="text-5xl md:text-7xl font-display font-bold text-stone-900 leading-[1.1] mb-8">
               Encuentra tu equilibrio <br />

@@ -52,7 +52,7 @@ const Services = () => {
 
               {/* Right: Text Content */}
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <h2 className="text-2xl font-display font-bold text-stone-900 mb-2">Coach y Terapia Holística</h2>
+                <h2 className="text-2xl font-display font-bold text-stone-900 mb-2">Coach y Terapia Transpersonal</h2>
                 <p className="text-brand-primary font-bold mb-8 uppercase tracking-widest text-sm italic">en su totalidad</p>
                 
                 <div className="space-y-8 text-stone-700 leading-relaxed">

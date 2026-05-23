@@ -128,7 +128,7 @@ const SpecializedTraining = () => {
 
         {/* Holistic Section Footer */}
         <div className="mt-40 text-center">
-          <h2 className="text-4xl font-display font-bold text-stone-900 mb-4">Coach y Terapia Holística</h2>
+          <h2 className="text-4xl font-display font-bold text-stone-900 mb-4">Coach y Terapia Transpersonal</h2>
           <div className="w-20 h-1.5 bg-brand-primary mx-auto rounded-full"></div>
         </div>
       </div>
